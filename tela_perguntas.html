@@ -18,11 +18,51 @@
     integrity="sha384-Yvckj+OnVuNS6LZ+m6UwNR6J2I6rAxr6Uy7V5C5X5orLFG1/IObY2Jqrgw5b1g7V"
     crossorigin="anonymous"></script>
   <style>
+    .principal {
+      height: 100vh;
+      background-image: url("background.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: blur(0); /* Inicialmente sem desfoque */
+      transition: filter 0.3s ease-in-out;
+    }
     body {
       background-image: url("images/background_perguntas.png");
       background-size: cover;
       background-position: sticky;
       background-repeat: repeat;
+      background-size: cover;
+    }
+
+    /* Estilos para a página de sobreposição */
+    .sobreposicao {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+    }
+
+    /* Estilos para animar a transição */
+    .sobreposicao.active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s ease-in-out, visibility 0s linear;
+    }
+
+    /* Estilos para o conteúdo da página de sobreposição */
+    .sobreposicao-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
     }
 
     .card {
@@ -45,10 +85,12 @@
       background-color: rgba(38, 13, 51, 1);
       color: rgba(21, 122, 140, 1);
     }
-    .navbar{
-      background-color: rgba(0, 0, 0, 0.35);
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.5);
     }
-    .btn-outline-secondary{
+
+    .btn-outline-secondary {
       text-align: left;
       border-radius: 50px;
       margin-right: 5px;
@@ -56,74 +98,119 @@
       color: rgba(38, 13, 51, 1);
       border: 2px solid rgb(10, 70, 100);
     }
-    .btn-outline-secondary:hover{
+
+    .btn-outline-secondary:hover {
       background-color: rgba(38, 13, 51, 1);
-      color: rgba(21, 122, 140, 1); 
-      border: 2px solid rgb(22, 2, 34);;
+      color: rgba(21, 122, 140, 1);
+      border: 2px solid rgb(22, 2, 34);
+      ;
     }
 
+    span {
+      color: rgba(38, 13, 51, 1)
+    }
   </style>
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var sobreposicao = document.querySelector(".sobreposicao");
+      var abrirBtn = document.querySelector(".btn-denuncia");
+      var fecharBtn = document.querySelector(".fechar-btn");
+      var principal = document.querySelector(".principal");
+
+      abrirBtn.addEventListener("click", function () {
+        sobreposicao.classList.add("active");
+        principal.style.filter = "blur(5px)"; // Aplica o desfoque ao fundo
+      });
+
+      fecharBtn.addEventListener("click", function () {
+        sobreposicao.classList.remove("active");
+        principal.style.filter = "blur(0)"; // Remove o desfoque do fundo
+      });
+    });
+  </script>
 </head>
 
 <body>
-  <nav class="navbar">
-    <a class="navbar-brand">
-    <img src="images/Show do Milhãobranco.png" width="90" height="30"></a>
-    <form class="form-inline">
-      <button class="btn btn-sm btn-outline-danger" type="button">Sair</button>
-      <button class="btn btn-sm btn-outline-secondary" type="button">Pontuação Atual</button>
-      
-    </form>
-  </nav>
+  <div class="principal">
+    <nav class="navbar">
+      <a class="navbar-brand">
+        <img src="images/Show do Milhãobranco.png" width="90" height="30"></a>
+      <form class="form-inline">
+        <button class="btn btn-sm btn-outline-secondary" type="button">Pontuação Atual</button>
+        <button class="btn btn-sm btn-outline-danger btn-denuncia" type="button">Denuncia</button>
+        <button class="btn btn-sm btn-outline-danger" type="button">Sair</button>
 
-  <div class="card" style="width: 1080px; height: 550px; margin: 50px auto; border-radius: 25px;">
-    <div class="card-body">
-      <!-- conteúdo a partir daqui -->
-      <div class="card" style="width: auto; height: 220px;background-color:rgb(190, 190, 200); border-radius: 15px;">
-        <div class="card-body">
-          <h4>Pergunta 1/7</h4>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor dolor vel mauris vehicula, eget interdum
-          mauris blandit. Curabitur semper scelerisque justo sit amet eleifend. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Sed auctor dolor vel mauris vehicula, eget interdum mauris blandit. Curabitur semper
-          scelerisque justo sit amet eleifend.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor dolor
-          vel mauris vehicula, eget interdum mauris blandit. Curabitur semper scelerisque justo sit amet eleifend.Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor dolor vel mauris vehicula, eget interdum mauris
-          blandit. Curabitur semper scelerisque justo sit amet eleifend.
+      </form>
+    </nav>
+
+    <div class="card" style="width: 1080px; height: auto; margin: 50px auto; border-radius: 25px;">
+      <div class="card-body" style="filter: blur(0); transition: filter 0.3s ease-in-out;">
+        <!-- conteúdo a partir daqui -->
+        <div class="card" style="width: auto; height: auto; background-color: rgb(190, 190, 200); border-radius: 15px;">
+          <div class="card-body">
+            <h4>Pergunta 1/7</h4>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor dolor vel mauris vehicula, eget interdum
+            mauris blandit. Curabitur semper scelerisque justo sit amet eleifend. Lorem ipsum dolor sit amet,
+            consectetur
+            adipiscing elit. Sed auctor dolor vel mauris vehicula, eget interdum mauris blandit. Curabitur semper
+            scelerisque justo sit amet eleifend.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor
+            dolor
+            vel mauris vehicula, eget interdum mauris blandit. Curabitur semper scelerisque justo sit amet
+            eleifend.Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor dolor vel mauris vehicula, eget interdum
+            mauris
+            blandit. Curabitur semper scelerisque justo sit amet eleifend.
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <button type="button" class="btn btn-primary opcaoA" style="border-radius: 25px;">
+            <strong>A</strong>
+          </button>
+          <span style="display: inline-block; margin-left: 10px;margin-top: 20px;"><strong>Resposta do item
+              A</strong></span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <button type="button" class="btn btn-primary opcaoB" style="border-radius: 25px;">
+            <strong>B</strong>
+          </button>
+          <span style="display: inline-block; margin-left: 10px;margin-top: 20px;"><strong>Resposta do item
+              B</strong></span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <button type="button" class="btn btn-primary opcaoC" style="border-radius: 25px;">
+            <strong>C</strong>
+          </button>
+          <span style="display: inline-block; margin-left: 10px; margin-top: 20px;"><strong>Resposta do item
+              C</strong></span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <button type="submit" class="btn btn-primary opcaoD" style="border-radius: 25px;">
+            <strong>D</strong>
+          </button>
+          <span style="display: inline-block; margin-left: 10px; margin-top: 20px;"><strong>Resposta do item
+              D</strong></span>
         </div>
       </div>
 
-      <div style="display: flex; justify-content: left; align-items: center;">
-        <button type="button" class="btn btn-primary opcaoA" style="border-radius: 25px;">
-          <strong>A</strong>
-        </button>
-        <span style="display: inline-block; margin-left: 10px;margin-top: 20px;">Resposta do item A</span>
+      <div class="sobreposicao">
+        <div class="sobreposicao-content">
+          <h2>Gostaria de denunciar essa pergunta?</h2> <!-- NÃO ESTA FUNCIONANDO CORRETAMENTE-->
+          <button class="fechar-btn">Fechar</button>
+        </div>
       </div>
 
-      <div style="display: flex; justify-content: left; align-items: center;">
-        <button type="button" class="btn btn-primary opcaoB" style="border-radius: 25px;">
-          <strong>B</strong>
-        </button>
-        <span style="display: inline-block; margin-left: 10px;margin-top: 20px;">Resposta do item B</span>
-      </div>
-
-      <div style="display: flex; justify-content: left; align-items: center;">
-        <button type="button" class="btn btn-primary opcaoC" style="border-radius: 25px;">
-          <strong>C</strong>
-        </button>
-        <span style="display: inline-block; margin-left: 10px; margin-top: 20px;">Resposta do item C</span>
-      </div>
-
-      <div style="display: flex; justify-content: left; align-items: center;">
-        <button type="button" class="btn btn-primary opcaoD" style="border-radius: 25px;">
-          <strong>D</strong>
-        </button>
-        <span style="display: inline-block; margin-left: 10px; margin-top: 20px;">Resposta do item D</span>
-      </div>
 
 </body>
 
 </html>
 
 <!--
-  o botão ainda está um pouco estranho e as respostas não estã numa fonte apropriada, a refazer
+  o botão ainda está um pouco estranho e as respostas não estão numa fonte apropriada, a refazer
+
+  
 -->
