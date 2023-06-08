@@ -1,0 +1,338 @@
+/* Body para todos so arquivos */
+body {
+    background: linear-gradient(109deg, #106b87, #260d33, #450725, #660735);
+    background-size: 800% 800%;
+    background-repeat: repeat;
+    /*color: rgba(38, 13, 51, 1); alguns não usam, logo melhor deixar para cada div*/
+    transition: opacity 0.3s ease-in-out;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    animation: AnimationName 60s ease infinite;
+    color: rgba(38, 13, 51, 1);
+    margin: 0;
+}
+
+/* animação do fundo */
+@keyframes AnimationName {
+    0% {
+        background-position: 1% 0%
+    }
+
+    50% {
+        background-position: 99% 100%
+    }
+
+    100% {
+        background-position: 1% 0%
+    }
+}
+
+/*>>>>>>>>>>>CSS PARA IMAGENS*/
+
+img#logo-navbar {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+}
+
+img#logo-media {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 250px;
+    padding: 20px;
+}
+
+img#logo-grande {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 500px;
+    padding: 20px;
+}
+
+/*>>>>>>>>>>>>>A partir daqui são estilos de telas */
+
+
+/* Essa div é para telas que usam mais de uma tela */
+.principal {
+    height: 100vh;
+    filter: blur(0);
+    transition: filter 0.3s ease-in-out;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Essa tela é para aquelas que aparecem sobre as outras
+    >>>ESTE NÃO É O CONTEUDO DA TELA<<< 
+    
+    >>> uma tela nao tem padding e outra tem, preste muita atenção!!!
+    */
+.teladesobreposicao,
+.teladesobreposicao-pad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+.teladesobreposicao-pad {
+    padding: 20px;
+}
+
+/* Quando a tela aparece, ela tem essas propriedades
+    Retire o "active" para ela ficar fixa na hora de programar */
+.teladesobreposicao.active,
+.teladesobreposicao-pad.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear;
+}
+
+/* Dentro de cada tela tem um  */
+.teladesobreposicao-cont,
+.teladesobreposicao-pad-cont {
+    background-color: rgb(211, 211, 211);
+    color: #260d33;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+/*>>>>>>>>>>>>>A partir daqui são estilos de cards */
+
+.card-normal {
+    background-color: rgba(169, 164, 179, 1);
+    width: 550px;
+    height: auto;
+    margin: 100px auto;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.card-perguntas {
+    background-color: rgba(169, 164, 179, 1);
+    width: 1080px;
+    height: auto;
+    margin: 100px auto;
+    border-radius: 25px;
+}
+
+/*>>>>>>>>>>>>>A partir daqui são estilos de botões */
+
+/* ao colocar um botão, sempre use ".btn" e depois outra propriedade */
+.btn {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn-sdm {
+    text-align: center;
+    border-radius: 50px;
+    background-color: rgba(21, 122, 140, 1);
+    border: 2px solid rgba(21, 122, 140, 1);
+    color: rgba(38, 13, 51, 1);
+    font-size: 14pt;
+    width: auto;
+    height: auto;
+    margin-top: 25px;
+    padding: 3px 10px 3px 10px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.btn-sdm:hover {
+    background-color: rgba(38, 13, 51, 1);
+    color: rgba(21, 122, 140, 1);
+}
+
+
+.btn-maior {
+    width: 90px;
+}
+
+.btn-outline-sdm {
+    text-align: center;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 1px solid rgba(21, 122, 140, 1);
+    color: rgba(21, 122, 140, 1);
+    font-size: 11pt;
+    width: auto;
+    height: auto;
+    margin-top: 25px;
+    padding: 3px 10px 3px 10px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.btn-outline-sdm:hover {
+    background-color: rgba(21, 122, 140, 1);
+    border: 1px solid rgba(21, 122, 140, 1);
+    color: rgb(255, 255, 255);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.btn-outline-sdm-danger {
+    text-align: center;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 1px solid #dc3444;
+    color: #dc3444;
+    font-size: 11pt;
+    width: auto;
+    height: 35px;
+    margin-top: 25px;
+    padding: 3px 10px 3px 10px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.btn-outline-sdm-danger:hover {
+    background-color: #dc3444;
+    border: 1px solid #dc3444;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* >>>>>>>>>>CSS da nav bar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: auto block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* CSS apenas para o logo */
+.navbar-logo {
+    display: inline-block;
+    align-content: left;
+    margin-left: 20px;
+}
+
+/* CSS para o conteudo */
+.navbar-cont {
+    color: white;
+    text-align: right;
+    display: inline-block;
+    justify-content: center;
+    margin: 0px 10px 10px 10px;
+}
+
+/*>>>>>>>>>>Syles para inputs e forms*/
+input[type=text],
+input[type=password],
+input[type=email],
+textarea,
+select.custom-select {
+    border: 2px solid #4d4d4d;
+    border-radius: 10px;
+    background-color: transparent;
+    width: 100%;
+    transition: border-radius 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+textarea:focus,
+select.custom-select:focus {
+    outline: none;
+    border-color: #6c757d;
+    background-color: rgb(230, 230, 230);
+    border-radius: 20px;
+    transition: border-radius 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=email]:hover,
+textarea:hover,
+select.custom-select:hover {
+    border: 2px solid #4d4d4d;
+    background-color: rgb(230, 230, 230);
+    border-radius: 20px;
+    width: 100%;
+    transition: border-radius 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+select.custom-select {
+    height: 30px;
+}
+
+input {
+    display: block;
+    border-radius: 15px;
+    border: 2px solid #4d4d4d;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+
+label {
+    color: rgba(38, 13, 51, 1);
+    font-size: large;
+    padding-left: 5px;
+}
+
+.forms {
+    padding: 30px 40px 30px 30px;
+    text-align: left;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: max-content;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+}
+
+.form-control textarea {
+    resize: vertical;
+}
+
+textarea {
+    resize: vertical;
+    margin-top: 5px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+/* Aquele texto abaixo do nome e pergunta é esse */
+small {
+    color: #6c757d !important;
+    padding-left: 7px;
+}
+
+/* CSS referente aquele texto que fica abaixo da tela de sobreposição */
+.subtextoconfirmacao {
+    background-color: rgb(27, 8, 37);
+    color: rgba(169, 164, 179, 1);
+}
+
+/* Sabe aquele texto nos inputs, isso aqui mexe nisso */
+::placeholder {
+    padding-left: 10px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24
+}
