@@ -125,6 +125,30 @@ img#logo-grande {
     height: auto;
     margin: 100px auto;
     border-radius: 25px;
+    padding: 30px 20px 20px 30px;
+    align-items: center;
+    display: block;
+    box-sizing: border-box;
+}
+
+.divisoria {
+    border: none;
+    border-top: 1px solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    border-color: rgba(38, 13, 51, 1);
+}
+.perguntas{
+    width: 95%;
+    height: auto;
+    text-align: left;
+    justify-items: center;
+    background-color: rgb(190, 190, 200);
+    padding:0px 20px 20px 20px;
+    border-radius: 15px;
+    display: flex;
+    margin-bottom: 20px;
 }
 
 /*>>>>>>>>>>>>>A partir daqui são estilos de botões */
@@ -187,7 +211,7 @@ img#logo-grande {
     color: #dc3444;
     font-size: 11pt;
     width: auto;
-    height: 35px;
+    height: auto;
     margin-top: 25px;
     padding: 3px 10px 3px 10px;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
@@ -198,6 +222,11 @@ img#logo-grande {
     border: 1px solid #dc3444;
     color: rgb(255, 255, 255);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.span-style{
+    margin-left: 10px;
+    display: inline-block;
 }
 
 /* >>>>>>>>>>CSS da nav bar */
@@ -278,6 +307,19 @@ input {
     margin-top: 5px;
 }
 
+.link {
+    color: rgba(38, 13, 51, 1);
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.link:hover {
+    color: rgba(21, 122, 140, 1);
+}
+
+.texto-meio{
+    text-align: center;
+}
 
 label {
     color: rgba(38, 13, 51, 1);
@@ -314,14 +356,19 @@ textarea {
 
 /* Aquele texto abaixo do nome e pergunta é esse */
 small {
-    color: #6c757d !important;
+    color: #6c757d ;
     padding-left: 7px;
 }
 
 /* CSS referente aquele texto que fica abaixo da tela de sobreposição */
 .subtextoconfirmacao {
     background-color: rgb(27, 8, 37);
-    color: rgba(169, 164, 179, 1);
+    color: rgb(211, 211, 211);
+    font-size: x-small;
+    height: auto;
+    padding: 2px;
+    text-align: center;
+    justify-content: center;
 }
 
 /* Sabe aquele texto nos inputs, isso aqui mexe nisso */
