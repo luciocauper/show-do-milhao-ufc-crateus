@@ -6,128 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha384-/Y6pD6pU4a8vI6+OGtoEwGpFdJQ9B8MWvALM2Q6QcYs/RwU8Q1a1TGyoozGksdqr"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"
-        integrity="sha512-jvH9eTzkjKq3+gJW8WevS+bSAmnOUul+M05VLG4FFJv4h4xFsZsYKfBkW8zta/wr6tzmk0COU69kr6aWbfIv+g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Yvckj+OnVuNS6LZ+m6UwNR6J2I6rAxr6Uy7V5C5X5orLFG1/IObY2Jqrgw5b1g7V"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/sdm_style.css">
     <link rel="icon" href="images/Icons/Vector.png" type="image/x-icon">
-    <style>
-        body {
-            background-image: url("images/background_perguntas.png");
-            background-size: cover;
-            background-position: sticky;
-            background-repeat: repeat;
-            background-size: cover;
-        }
-
-        .principal {
-            color: rgba(38, 13, 51, 1);
-        }
-
-        .card {
-            background-color: rgba(169, 164, 179, 1);
-            text-align: center;
-            justify-content: center;
-        }
-
-        .Icon_com_texto {
-            align-items: center;
-            justify-content: center;
-            margin-top: 25px;
-            color: rgba(38, 13, 51, 1);
-        }
-
-        .informacoes {
-            margin-top: 25px;
-            margin-bottom: 25px;
-        }
-
-        .divisoria {
-            border: none;
-            border-top: 1px solid;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 400px;
-            border-color: rgba(38, 13, 51, 1);
-        }
-
-        a {
-            color: rgba(38, 13, 51, 1);
-            text-decoration: underline;
-            font-style: italic;
-        }
-
-        a:hover {
-            color: rgba(21, 122, 140, 1);
-        }
-
-        .btn-primary {
-            text-align: center;
-            border-radius: 15px;
-            background-color: rgba(21, 122, 140, 1);
-            color: rgba(38, 13, 51, 1);
-            font-size: 14pt;
-            display: block;
-            width: 300px;
-            height: 50px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 25px;
-        }
-
-        .btn-primary:hover {
-            background-color: rgba(38, 13, 51, 1);
-            color: rgba(21, 122, 140, 1);
-        }
-
-        /* .icon_alterar {
-            text-align: center;
-            display: flex;
-        } */
-    </style>
 </head>
 
 <body>
     <div class="principal">
-        <div class="card" style="width: 500px; height: auto; margin: 50px auto; border-radius: 25px;">
+        <div class="card-normal" style="text-align: center;">
             <div class="Icon_com_texto">
                 <a href="tela_cadastro.html">
                     <img src="images/Icons/icon_circle.png"
                         class="display:flex; justify-content:center; align-items:center; height:100vh;"
                         alt="Foto de perfil">
                 </a>
-                <!-- <small id="texto_icon" class="form-text text-muted; text-align:center">
-                    Alterar foto de perfil
-                </small> -->
             </div>
-            <!-- <div class="icon_alterar">
-                    <img src="images/Icons/lapis.png" alt="">
-                </div> -->
             <div class="informacoes">
                 <h1>Nome do usuário</h1>
                 <h6>UID: 0123456789</h6>
                 <hr class="divisoria">
-                <h3>Estatísticas</h3>
-                Tempo jogado:1080 horas <br>
-                Jogos jogados: 60 partidas <br>
-                Jogos ganhos: 25 vitórias <br>
-                Dinheiro ganho: R$900 mil <br>
+                <p style="font-size: 20pt;">Estatísticas</p>
+                <p>Tempo jogado:1080 horas</p>
+                <p>Jogos jogados: 60 partidas</p>
+                <p>Jogos ganhos: 25 vitórias</p>
+                <p>Dinheiro ganho: R$900 mil</p> <br>
                 <a href="">Ver mais estatísticas</a> <!--esse link está incompleto, não sera apresentado agora-->
                 <hr class="divisoria">
 
-                <div class="botoes">
-                    <button type="button" class="btn btn-primary" style="border-radius: 25px;"><b>Alterar
-                            informações</b></button> <!--esse botão leva para a tela de cadastro, fazer com que as informações retornem e fiquem nauquela tela
+                <div>
+                    <button type="button" class="btn btn-sdm btn-maior botao-texto"><b>Alterar Informações</b></button>
+                    <!--esse botão leva para a tela de cadastro, fazer com que as informações retornem e fiquem nauquela tela
                                                         a rota tbm nao esta feita, implemnetar pf-->
+                </div>
+                <div>
                     <a href="tela_principal.html">
-                        <button type="button" class="btn btn-primary" style="border-radius: 25px;"><b>Voltar</b></button> <!-- o estilo ta errado aqui-->
+                        <button type="button" class="btn btn-sdm btn-maior botao-texto"><b>Voltar</b></button>
+                        <!-- o estilo ta errado aqui-->
                     </a>
                 </div>
             </div>
