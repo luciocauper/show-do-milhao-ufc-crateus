@@ -152,6 +152,20 @@ img#logo-grande {
     margin-bottom: 20px;
 }
 
+/*              Alteraçôes do Lucas                     */
+.informacoes p {
+    margin-bottom: -6px;
+}
+
+.informacoes a {
+    color: rgba(38, 13, 51, 1);
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.informacoes a:hover {
+    color: rgba(21, 122, 140, 1);
+}
 
 
 /*>>>>>>>>>>>>>A partir daqui são estilos de botões */
