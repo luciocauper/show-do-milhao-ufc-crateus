@@ -16,15 +16,15 @@
     <div class="card-body">
       <!-- conteúdo a partir daqui -->
       <form class="forms">
-          <div class="form-group">
-            <label class="text-left" for="nome">Nome</label>
-              <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
-            </div><!--desativar-->
-            
-            <div class="form-group">
-              <label class="text-left" for="email">Endereço de email</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Seu email">
-            </div><!--desativar-->
+        <div class="form-group">
+          <label class="text-left" for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+        </div><!--desativar-->
+
+        <div class="form-group">
+          <label class="text-left" for="email">Endereço de email</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Seu email">
+        </div><!--desativar-->
 
         <div class="form-group mb-4">
           <label for="Nickname">Nickname</label>
@@ -33,7 +33,7 @@
 
         <div class="form-group">
           <label for="exampleFormControlFile1">Escolha uma bela foto sua :)</label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1" style="border: 0;">
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
         </div>
 
         <div class="form-group">
@@ -48,29 +48,19 @@
 
         <div class="texto-meio">
           <a href="tela_principal.html">
-            <button type="submit" class="btn btn-maior btn-sdm botao-texto" style="width: 140px" onclick="validateForm()">Salvar</button> <br> <!--fazer uma validação aqui-->
-            <button type="button" class="btn btn-maior btn-sdm-danger">Não alterar</button> 
+            <button type="submit" class="btn btn-maior btn-sdm botao-texto">Salvar</button>
+          </a>
+        </div>
+
+        <div class="texto-meio">
+          <a href="tela_principal.html">
+            <button type="button" class="btn btn-maior btn-sdm-danger">Não alterar</button>
           </a>
         </div>
 
       </form>
     </div>
   </div>
-  <script>
-    var input = document.querySelectorAll("input[type=text],input[type=password],input[type=email]");
-    
-    function validateForm() {
-      var password = document.getElementById("Senha");
-      var confirmPassword = document.getElementById("ConfirmarSenha");
-
-      if (password.value != confirmPassword.value) {
-        confirmPassword.setCustomValidity("As senhas não coincidem");
-      } else {
-        confirmPassword.setCustomValidity("");
-      }
-    }
-
-  </script>
 </body>
 
 </html>

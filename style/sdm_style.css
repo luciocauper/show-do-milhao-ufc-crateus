@@ -1,19 +1,34 @@
+/* 
+Link para stysheet de icones do google, style_sdm e icone
+
+  <link rel="stylesheet" type="text/css" href="style\sdm_style.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="icon" href="images/Icons/Vector.png" type="image/x-icon">
+
+*/
+
 /* Body para todos so arquivos */
-body {
+body,
+.body-anim {
     background: linear-gradient(109deg, #106b87, #260d33, #450725, #660735);
     background-size: 200% 500%;
     background-repeat: repeat;
     /*color: rgba(38, 13, 51, 1); alguns não usam, logo melhor deixar para cada div*/
     transition: opacity 0.3s ease-in-out;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    animation: AnimationName 60s ease infinite;
     color: rgba(38, 13, 51, 1);
     margin: 0;
     overflow: auto;
 }
 
-/* animação do fundo */
-/* @keyframes AnimationName {
+.body-anim {
+    background-size: 800% 800% !important;
+    animation: AnimationName 60s ease infinite;
+}
+
+/*animação do fundo */
+@keyframes AnimationName {
     0% {
         background-position: 1% 0%
     }
@@ -25,7 +40,7 @@ body {
     100% {
         background-position: 1% 0%
     }
-} */
+}
 
 /*>>>>>>>>>>>CSS PARA IMAGENS*/
 
@@ -152,21 +167,19 @@ img#logo-grande {
     margin-bottom: 20px;
 }
 
-/*              Alteraçôes do Lucas                     */
 .informacoes p {
     margin-bottom: -6px;
 }
 
-.informacoes a {
+.link {
     color: rgba(38, 13, 51, 1);
     text-decoration: underline;
     font-style: italic;
 }
 
-.informacoes a:hover {
+.link:hover {
     color: rgba(21, 122, 140, 1);
 }
-
 
 /*>>>>>>>>>>>>>A partir daqui são estilos de botões */
 
@@ -201,7 +214,8 @@ img#logo-grande {
     height: 45px !important; */
     padding: 10px 30px 10px 30px !important;
 }
-.btn-sdm-info{
+
+.btn-sdm-info {
     text-align: center;
     border-radius: 50px;
     background-color: rgba(21, 122, 140, 1);
@@ -213,6 +227,32 @@ img#logo-grande {
     margin-top: 25px;
     padding: 3px 10px 3px 10px;
     cursor: default;
+    margin-right: 5px;
+}
+
+.btn-sdm-info:hover {
+    background-color: rgb(18, 113, 129);
+    border: 1px solid rgb(18, 113, 129);
+}
+
+.btn-sdm-verde {
+    text-align: center;
+    border-radius: 50px;
+    background-color: rgb(42, 133, 20);
+    border: 1px solid rgb(42, 133, 20);
+    color: white;
+    font-size: 11pt;
+    width: auto;
+    height: auto;
+    margin-top: 25px;
+    padding: 3px 10px 3px 10px;
+    cursor: default;
+    margin-right: 5px;
+}
+
+.btn-sdm-verde:hover {
+    background-color: rgb(38, 117, 18);
+    border: 1px solid rgb(38, 117, 18);
 }
 
 .btn-sdm-danger {
@@ -221,7 +261,7 @@ img#logo-grande {
     background-color: #dc3444;
     border: 1px solid #dc3444;
     color: white;
-    font-size: 11pt;
+    font-size: 14pt;
     width: auto;
     height: auto;
     /* margin-top: 25px; */
@@ -298,7 +338,7 @@ img#logo-grande {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
-.btn-opc{
+.btn-opc {
     display: inline-block;
     padding: 0.5rem 0.9rem;
     font-size: 18px;
@@ -332,10 +372,11 @@ img#logo-grande {
     transform: translateX(0);
 }
 
-.botao-texto{
+.botao-texto {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .span-style {
     margin-left: 10px;
     display: inline-block;
@@ -372,7 +413,7 @@ img#logo-grande {
     margin: -15px 17.5px 10px 10px;
 }
 
-.grupo-botoes-inline{
+.grupo-botoes-inline {
     margin-right: 3px;
     margin-left: 3px;
 }
@@ -414,19 +455,33 @@ select.custom-select:hover {
     transition: border-radius 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-select.custom-select {
-    height: 30px;
-}
-
 input {
     display: block;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 2px solid #4d4d4d;
     height: 100%;
     width: 100%;
     padding: 5px;
     margin-top: 5px;
 }
+
+fieldset,
+.desativado {
+    border: none;
+    transition: none;
+}
+
+fieldset:hover,
+.desativado:hover {
+    border: none;
+    border-radius: 10px !important;
+    transition: none;
+}
+
+select.custom-select {
+    height: 30px;
+}
+
 
 .link {
     color: rgba(38, 13, 51, 1);
@@ -449,7 +504,7 @@ label {
 }
 
 .forms {
-    padding: 30px 40px 30px 30px;
+    padding: 20px 30px 20px 20px;
     text-align: left;
 }
 
@@ -472,7 +527,7 @@ textarea {
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 /* Aquele texto abaixo do nome e pergunta é esse */
@@ -492,7 +547,7 @@ small {
     justify-content: center;
 }
 
-.centralizador{
+.centralizador {
     align-items: center;
     display: inline-flex;
     justify-content: center;
@@ -528,7 +583,7 @@ table {
     background-color: transparent;
     border: 0px;
     padding: 0px;
-    
+
 }
 
 
@@ -542,14 +597,14 @@ td {
 th {
     background-color: transparent;
     font-weight: bold;
-    
+
 }
 
 tr:nth-child(even) {
     background-color: rgb(190, 190, 200);
 }
 
-tr{
+tr {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 

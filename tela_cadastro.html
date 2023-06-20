@@ -26,9 +26,9 @@
           <input type="text" class="form-control" id="Nickname" placeholder="Digite seu Nickname">
         </div>
 
-        <div class="form-group mb-4">
+        <div class="form-group">
           <label for="exampleFormControlFile1">Escolha uma bela foto sua :)</label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1" style="border: 0;">
+          <input type="file" class="form-control-file input" id="exampleFormControlFile1">
         </div>
 
         <div class="form-group">
@@ -48,31 +48,12 @@
 
       </form>
         <div>
-          <button type="submit" class="btn btn-sdm btn-maior botao-texto" onclick="validateForm()">Enviar</button>
+          <button type="submit" class="btn btn-sdm btn-maior botao-texto">Enviar</button>
+          <!-- voltar pra tela_inicial -->
         </div>
 
     </div>
   </div>
-
-  <script>
-    function validateForm() {
-      var password = document.getElementById("Senha");
-      var confirmPassword = document.getElementById("ConfirmarSenha");
-
-      if (password.value != confirmPassword.value) {
-        confirmPassword.setCustomValidity("As senhas não coincidem");
-      } else {
-        confirmPassword.setCustomValidity("");
-      }
-    }
-
-  </script>
-
 </body>
 
 </html>
-
-<!--
-
-  fazer com que ao clicar em enviar, pegar as informações e voltar para a tela_login
--->
