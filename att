@@ -1,0 +1,48 @@
+/* div de vitoria */
+
+<div id="telavitoria" class="teladesobreposicao telavitoria">
+<div class="teladesobreposicao-cont">
+  <h1>VITÓRIA</h1>
+  <h2>Você ganhou 1 milhão de reais!</h2>
+
+  <button class="btn btn-outline-sdm btn-maior botao-texto">
+    Voltar para o menu
+  </button>
+</div>
+</div>
+
+/* div de erro */
+
+<div id="telaerro" class="teladesobreposicao telaerro">
+<div class="teladesobreposicao-cont">
+  <div class="centralizador">
+    <span>
+      <img src="images/Icons/feitocomcirculoclose.png" style="margin-bottom: -4px;">
+    </span>
+    <span>
+      <h3 style="display: inline; margin-left: 25px;">Algo de errado aconteceu</h3>
+    </span>
+  </div>
+  <div class="subtextoconfirmacao">
+    <small>Clique em qualquer lugar para fechar a tela</small>
+  </div>
+</div>
+</div>
+
+/* div de sucesso */
+
+<div id="telasucesso" class="telasucesso teladesobreposicao">
+<div class="teladesobreposicao-cont">
+  <div class="centralizador">
+    <span>
+      <img src="images/Icons/feitocomcirculogrosso-menor-cut.png" style="margin-bottom: -4px;">
+    </span>
+    <span>
+      <h3 style="display: inline; margin-left: 25px;">[placeholder] realizada com suceso</h3>
+    </span>
+  </div>
+  <div class="subtextoconfirmacao">
+    <small>Clique em qualquer lugar para fechar a tela</small>
+  </div>
+</div>
+</div>
